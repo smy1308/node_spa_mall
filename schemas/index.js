@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 
 const connect = () => {
   mongoose
-    .connect('mongodb+srv://smy1308:gYMKAjFfuXb1dowF@cluster0.fgwbkpo.mongodb.net//spa_mall')
-    .then(() => console.log("MongoDB Cennected"))
+    .connect('mongodb://localhost:27017/spa_mall')
     .catch(err => console.log(err));
 };
 
