@@ -7,18 +7,21 @@ const cartsRouter = require('./routes/carts.js');
 const connect = require('./schemas');
 connect ();
 
-
 app.use(express.json());
-app.use('/api', [goodsRouter, cartsRouter]);
 
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+
+app.use('/api', [goodsRouter, cartsRouter]);
+
+
 app.listen(port, () => {
   console.log(port, '포트로 서버가 열렸어요!');
 });
+
 
 // app.post('/', (req,res) => {
 //     console.log(req.body);

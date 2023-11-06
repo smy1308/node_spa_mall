@@ -46,7 +46,7 @@ router.get('/goods', (req,res) => {
 router.get('/goods/:goodsId', (req, res) => {
 	const { goodsId } = req.params;
   for(const good of goods) {
-    if ( Number(goodsId) === good.goodsId) {
+    if ( Number(goodsId) === good.goodsId ) {
       result = good;
     }
   }
@@ -106,6 +106,7 @@ router.delete("/goods/:goodsId/cart", async (req, res) => {
   res.json({ result: "success" });
 });
 
+//상품 추가 API
 const Goods = require('../schemas/goods.js');
 router.post('/goods/', async (req,res) => {
   const { goodsId, name, thumbnailUrl, category, price } = req.body;
